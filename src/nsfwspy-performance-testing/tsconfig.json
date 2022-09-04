@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "baseUrl": ".",
+        "declaration": true,
         "target": "es5", 
         "module": "commonjs", 
         "outDir": "./dist", 
@@ -9,5 +11,16 @@
         "esModuleInterop": true, 
         "skipLibCheck": true, 
         "forceConsistentCasingInFileNames": true 
-    }
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/__tests__/*"
+    ],
+    "references": [
+        { "path": "../nsfwspy-core" },
+        { "path": "../nsfwspy-node" }
+    ]
 }

@@ -2,6 +2,8 @@ import * as tf from '@tensorflow/tfjs-node';
 import * as fs from 'fs';
 import { NsfwSpyResult } from '../../nsfwspy-core';
 
+tf.enableProdMode();
+
 export class NsfwSpy {
     private imageSize: number;
     private modelPath: string;
@@ -9,7 +11,7 @@ export class NsfwSpy {
 
     constructor(modelPath?: string) {
         this.imageSize = 224;
-        this.modelPath = modelPath ?? "https://raw.githubusercontent.com/d00ML0rDz/NsfwSpy.js/main/src/models/mobilenet%20v1.0.0/";
+        this.modelPath = modelPath ?? "file://C:\\Users\\Jamie\\source\\repos\\NsfwSpy\\JavaScript\\mobilenet\\model.json";
         this.model = null;
     }
 

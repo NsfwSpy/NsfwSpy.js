@@ -2,10 +2,14 @@
     "compilerOptions": {
         "baseUrl": ".",
         "target": "es5",
+        "composite": true,
         "module": "commonjs",
         "declaration": true,
         "outDir": "./dist",
-        "skipLibCheck": true
+        "rootDir": "./src",
+        "skipLibCheck": true,
+        "declarationMap": true,
+        "emitDeclarationOnly": false
     },
     "include": [
         "src"
