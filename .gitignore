@@ -1,2 +1,6 @@
 node_modules/
-lib/
+dist/
+tsconfig.tsbuildinfo
+build/
+.cache/
+out/
