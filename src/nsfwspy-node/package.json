@@ -1,0 +1,25 @@
+{
+  "name": "@nsfwspy/node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d00ML0rDz/NsfwSpy.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d00ML0rDz/NsfwSpy.js/issues"
+  },
+  "homepage": "https://github.com/d00ML0rDz/NsfwSpy.js#readme",
+  "devDependencies": {
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^3.20.0"
+  }
+}
