@@ -11,7 +11,7 @@ export class NsfwSpy {
 
     constructor(modelPath?: string) {
         this.imageSize = 224;
-        this.modelPath = modelPath ?? "file://C:\\Users\\Jamie\\source\\repos\\NsfwSpy\\JavaScript\\mobilenet\\model.json";
+        this.modelPath = modelPath ?? "https://nsfwspy.s3.eu-west-2.amazonaws.com/models/mobilenet-v1.0.0/model.json";
         this.model = null;
     }
 
