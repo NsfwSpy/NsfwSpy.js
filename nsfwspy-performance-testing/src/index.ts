@@ -20,8 +20,11 @@ const runPerformanceTesting = async (classifier: "nsfwspy" | "nsfwjs") => {
     let nsfwSpy = new NsfwSpy();
     let nsfwJs: nsfwjs.NSFWJS;
     if (classifier === "nsfwspy") {
-        console.log("Loading NsfwSpy model...")
-        await nsfwSpy.load();
+        await nsfwSpy.load({
+            onProgress: (progress) => {
+                console.log(`Loading NsfwSpy model... ${progress * 100}%`)
+            }
+        });
     } else {
         console.log("Loading NSFWJS model...")
         nsfwJs = await nsfwjs.load("https://nsfwjs.com/model/model.json", { size: 299 })

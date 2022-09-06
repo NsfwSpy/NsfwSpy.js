@@ -1,4 +1,5 @@
 import * as tf from '@tensorflow/tfjs-node';
+import * as tfjs from '@tensorflow/tfjs';
 import * as fs from 'fs';
 import { NsfwSpyResult } from '../../nsfwspy-core';
 
@@ -15,8 +16,8 @@ class NsfwSpy {
         this.model = null;
     }
 
-    async load() {
-        this.model = await tf.loadGraphModel(this.modelPath);
+    async load(loadOptions?: tfjs.io.LoadOptions) {
+        this.model = await tf.loadGraphModel(this.modelPath, loadOptions);
     }
 
     async classifyImageFromByteArray(imageBuffer: Buffer) {
@@ -38,7 +39,7 @@ class NsfwSpy {
 
         var data = await outputs.data();
         outputs.dispose();
-        
+
         return new NsfwSpyResult(data);
     }
 
