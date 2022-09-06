@@ -8,7 +8,7 @@ import path from 'path';
 
 (async () => {
     const testImagesPath = "E:\\NsfwSpy\\Test";
-    const classificationTypes = [
+    const classificationTypes: ClassificationTypes[] = [
         "hentai",
         "neutral",
         "pornography",
