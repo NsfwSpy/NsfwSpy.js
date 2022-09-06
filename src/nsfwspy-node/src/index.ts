@@ -4,7 +4,7 @@ import { NsfwSpyResult } from '../../nsfwspy-core';
 
 tf.enableProdMode();
 
-export class NsfwSpy {
+class NsfwSpy {
     private imageSize: number;
     private modelPath: string;
     private model: tf.GraphModel | null;
@@ -47,3 +47,5 @@ export class NsfwSpy {
         return this.classifyImageFromByteArray(imageBuffer);
     }
 }
+
+export = NsfwSpy;

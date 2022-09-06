@@ -1,7 +1,6 @@
 import { NsfwSpyResult } from '../../nsfwspy-core';
-import { NsfwSpy } from '../../nsfwspy-node';
+import NsfwSpy from '../../nsfwspy-node';
 import * as nsfwjs from 'nsfwjs';
-import pLimit from 'p-limit';
 // import * as tf from '@tensorflow/tfjs-node';
 import fs from 'fs';
 import path from 'path';
@@ -14,7 +13,6 @@ import path from 'path';
         "pornography",
         "sexy"
     ];
-    const limit = pLimit(15);
 
     const results: PerformanceResult[] = [];
     const nsfwSpy = new NsfwSpy();
@@ -28,7 +26,9 @@ import path from 'path';
         const testFiles = testFilenames.map((filename) => path.join(testFileDirectory, filename));
 
         const pr = new PerformanceResult(classificationType);
-        const promises = testFiles.map((testFile) => limit(async () => {
+        for (let index = 0; index < testFiles.length; index++) {
+            const testFile = testFiles[index];
+
             try {
                 // const imageBuffer = await fs.readFileSync(testFile);
                 // const image = await tf.node.decodeImage(imageBuffer, 3) as tf.Tensor3D;
@@ -42,9 +42,7 @@ import path from 'path';
             } catch (ex) {
                 console.log(`FAILED TO CLASSIFY ${testFile} | ${ex}`);
             }
-        }));
-
-        await Promise.all(promises);
+        };
 
         results.push(pr);
     }
