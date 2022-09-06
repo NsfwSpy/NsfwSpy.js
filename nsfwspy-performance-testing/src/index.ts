@@ -2,11 +2,12 @@ import { ClassificationTypes } from './../../nsfwspy-core/src/index';
 import { NsfwSpyResult } from '../../nsfwspy-core';
 import NsfwSpy from '../../nsfwspy-node';
 import * as nsfwjs from 'nsfwjs';
-// import * as tf from '@tensorflow/tfjs-node';
+import * as tf from '@tensorflow/tfjs-node';
+import * as readline from 'readline';
 import fs from 'fs';
 import path from 'path';
 
-(async () => {
+const runPerformanceTesting = async (classifier: "nsfwspy" | "nsfwjs") => {
     const testImagesPath = "E:\\NsfwSpy\\Test";
     const classificationTypes: ClassificationTypes[] = [
         "hentai",
@@ -16,10 +17,17 @@ import path from 'path';
     ];
 
     const results: PerformanceResult[] = [];
-    const nsfwSpy = new NsfwSpy();
-    await nsfwSpy.load();
-    // const nsfwJs = await nsfwjs.load("file://./model/", { size: 299 })
+    let nsfwSpy = new NsfwSpy();
+    let nsfwJs: nsfwjs.NSFWJS;
+    if (classifier === "nsfwspy") {
+        console.log("Loading NsfwSpy model...")
+        await nsfwSpy.load();
+    } else {
+        console.log("Loading NSFWJS model...")
+        nsfwJs = await nsfwjs.load("https://nsfwjs.com/model/model.json", { size: 299 })
+    }
 
+    console.time("Total runtime");
     for (let index = 0; index < classificationTypes.length; index++) {
         const classificationType = classificationTypes[index];
         const testFileDirectory = path.join(testImagesPath, classificationType);
@@ -31,14 +39,19 @@ import path from 'path';
             const testFile = testFiles[index];
 
             try {
-                // const imageBuffer = await fs.readFileSync(testFile);
-                // const image = await tf.node.decodeImage(imageBuffer, 3) as tf.Tensor3D;
-                // const prResult = await nsfwJs.classify(image);
-                // const nsfwSpyResult = new NsfwJsResult(prResult);
-                // image.dispose();
+                let nsfwResult: NsfwSpyResult | NsfwJsResult;
 
-                const nsfwSpyResult = await nsfwSpy.classifyImageFile(testFile);
-                pr.results.push(nsfwSpyResult);
+                if (classifier === "nsfwspy") {
+                    nsfwResult = await nsfwSpy.classifyImageFile(testFile);
+                } else {
+                    const imageBuffer = await fs.readFileSync(testFile);
+                    const image = await tf.node.decodeImage(imageBuffer, 3) as tf.Tensor3D;
+                    const prResult = await nsfwJs!.classify(image);
+                    nsfwResult = new NsfwJsResult(prResult);
+                    image.dispose();
+                }
+
+                pr.results.push(nsfwResult);
                 console.log(`${pr.key}  | Correct Asserts: ${pr.correctAsserts} / ${pr.totalAsserts} (${(pr.correctAsserts / pr.totalAsserts) * 100}%) | IsNsfw: ${pr.nsfwAsserts} / ${pr.totalAsserts} (${(pr.nsfwAsserts / pr.totalAsserts) * 100}%) | ${testFile}`);
             } catch (ex) {
                 console.log(`FAILED TO CLASSIFY ${testFile} | ${ex}`);
@@ -51,7 +64,22 @@ import path from 'path';
     results.forEach((pr) => {
         console.log(`${pr.key}  | Correct Asserts: ${pr.correctAsserts} / ${pr.totalAsserts} (${(pr.correctAsserts / pr.totalAsserts) * 100}%) | IsNsfw: ${pr.nsfwAsserts} / ${pr.totalAsserts} (${(pr.nsfwAsserts / pr.totalAsserts) * 100}%)`);
     })
+    console.timeEnd("Total runtime");
+}
 
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+(async () => {
+    console.log("NSFW Performance Testing");
+    rl.question("Select library:\n1. NsfwSpy\n2. NSFWJS\n", (librarySelection) => {
+        if (librarySelection === "1")
+            runPerformanceTesting("nsfwspy");
+        else if (librarySelection === "2")
+            runPerformanceTesting("nsfwjs");
+    });
 })();
 
 class PerformanceResult {
