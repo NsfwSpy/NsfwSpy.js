@@ -3,7 +3,7 @@ export class NsfwSpyResult {
     neutral: number;
     pornography: number;
     sexy: number;
-    predictedLabel: string;
+    predictedLabel: ClassificationTypes;
 
     constructor(results: Uint8Array | Float32Array | Int32Array) {
         this.hentai = results[0];
@@ -18,7 +18,7 @@ export class NsfwSpyResult {
     }
 
     toDictionary() {
-        const dictionary = [
+        const dictionary: { key: ClassificationTypes, value: number }[] = [
             { key: "hentai", value: this.hentai },
             { key: "neutral", value: this.neutral },
             { key: "pornography", value: this.pornography },
@@ -30,3 +30,5 @@ export class NsfwSpyResult {
         });
     }
 }
+
+export type ClassificationTypes = "hentai" | "neutral" | "pornography" | "sexy";

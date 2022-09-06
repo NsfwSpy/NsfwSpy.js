@@ -1,3 +1,4 @@
+import { ClassificationTypes } from './../../nsfwspy-core/src/index';
 import { NsfwSpyResult } from '../../nsfwspy-core';
 import NsfwSpy from '../../nsfwspy-node';
 import * as nsfwjs from 'nsfwjs';
@@ -96,7 +97,7 @@ class NsfwJsResult {
     neutral: number;
     pornography: number;
     sexy: number;
-    predictedLabel: string;
+    predictedLabel: ClassificationTypes;
 
     constructor(results: nsfwjs.predictionType[]) {
         this.hentai = results.find((r) => r.className === "Hentai")?.probability ?? 0;
@@ -111,7 +112,7 @@ class NsfwJsResult {
     }
 
     toDictionary() {
-        const dictionary = [
+        const dictionary: { key: ClassificationTypes, value: number }[] = [
             { key: "hentai", value: this.hentai },
             { key: "neutral", value: this.neutral },
             { key: "pornography", value: this.pornography },
