@@ -11,7 +11,6 @@ import { NsfwSpy, NsfwSpyResult } from '@nsfwspy/browser'
 const nsfwSpy = new NsfwSpy("/model/model.json");
 
 export const App: React.FC = () => {
-    const [url, setUrl] = useState<string>();
     const [image, setImage] = useState<ImageFile>();
     const [imageResults, setImageResults] = useState<NsfwSpyResult>();
     const [processing, setProcessing] = useState<boolean>(false);
@@ -22,7 +21,7 @@ export const App: React.FC = () => {
         };
 
         loadNsfwSpyModel();
-    }, [])
+    }, []);
 
     const selectFile = () => {
         selectFiles({ accept: 'image/*;', multiple: false }).then(async files => {
@@ -75,17 +74,10 @@ export const App: React.FC = () => {
                                     <div><FontAwesomeIcon icon={faImage} /></div>
                                     <div><FontAwesomeIcon icon={faVideo} /></div>
                                 </div>
-                                <div className="subtitle">
-                                    Or paste a link below...
-                                </div>
                             </>}
                         {image &&
                             <img src={image.url} className="image-preview" />}
                     </div>
-                    <input
-                        type="text"
-                        placeholder="https://i3.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
-                        onChange={(e) => setUrl(e.target.value)} />
                 </section>
                 <section className="results-section">
                     {processing &&
