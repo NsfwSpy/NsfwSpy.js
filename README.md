@@ -1,7 +1,7 @@
 <img src="https://raw.githubusercontent.com/d00ML0rDz/NsfwSpy/main/_art/NsfwSpy-Logo.jpg" alt="NsfwSpy Logo" width="400"/>
 
 # Introduction
-NsfwSpy.js is a nudity/pornography image classifier built for Node.js, based on our [parent .NET project](https://github.com/d00ML0rDz/NsfwSpy), to aid in moderating user-generated content for various different application types, written in TypeScript. The machine learning model has been trained against the MobileNetV2 neural net architecture with 537,000 images (186GB), from 4 different categories:
+NsfwSpy.js is a nudity/pornography image classifier built for Node.js and browsers, based on our [parent .NET project](https://github.com/d00ML0rDz/NsfwSpy), to aid in moderating user-generated content for various different application types, written in TypeScript. The machine learning model has been trained against the MobileNetV2 neural net architecture with 537,000 images (186GB), from 4 different categories:
 
 | Label       | Description | Files |
 | ----------- | ----------- | ----- |
@@ -21,7 +21,31 @@ NsfwSpy.js isn't perfect, but the accuracy should be good enough to detect appro
 | Correctly Predicted Label | 85.0% | 81.0% | 89.8% | 96.4% |
 
 # Quick Start
-This project is available as a [npm package](https://www.npmjs.com/package/@nsfwspy/node) and can be installed with the following commands:
+Want to see how NsfwSpy.js performs? Try it now on our [test site](https://d00ml0rdz.github.io/NsfwSpy.js/).
+
+This project is available as two seperate packages, one for [browsers](https://www.npmjs.com/package/@nsfwspy/browser) and one for [Node.js](https://www.npmjs.com/package/@nsfwspy/node).
+
+## Browser
+
+```
+npm install @nsfwspy/browser
+```
+
+Import NsfwSpy at the top of your JavaScript or TypeScript file:
+
+```typescript
+import { NsfwSpy } from '@nsfwspy/browser';
+```
+
+### Classify an Image element
+```javascript
+const img = document.getElementById("img");
+const nsfwSpy = new NsfwSpy();
+await nsfwSpy.load();
+const result = await nsfwSpy.classifyImage(img);
+```
+
+## Node.js
 
 ```
 npm install @nsfwspy/node
