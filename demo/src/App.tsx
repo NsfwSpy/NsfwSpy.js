@@ -72,7 +72,6 @@ export const App: React.FC = () => {
                                 </div>
                                 <div className="icons">
                                     <div><FontAwesomeIcon icon={faImage} /></div>
-                                    <div><FontAwesomeIcon icon={faVideo} /></div>
                                 </div>
                             </>}
                         {image &&
