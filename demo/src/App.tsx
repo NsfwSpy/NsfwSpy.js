@@ -14,10 +14,20 @@ export const App: React.FC = () => {
     const [image, setImage] = useState<ImageFile>();
     const [imageResults, setImageResults] = useState<NsfwSpyResult>();
     const [processing, setProcessing] = useState<boolean>(false);
+    const [status, setStatus] = useState("");
 
     useEffect(() => {
         const loadNsfwSpyModel = async () => {
-            await nsfwSpy.load();
+            try {
+                await nsfwSpy.load({
+                    onProgress: (progress) => setStatus(`Model loading... ${(progress * 100).toFixed(2)}%`)
+                });
+                setTimeout(() => { 
+                    setStatus("") 
+                }, 1000);
+            } catch {
+                setStatus("Failed to load model");
+            }
         };
 
         loadNsfwSpyModel();
@@ -79,6 +89,10 @@ export const App: React.FC = () => {
                     </div>
                 </section>
                 <section className="results-section">
+                    {status &&
+                        <div>
+                            {status}
+                        </div>}
                     {processing &&
                         <div>
                             Processing...
