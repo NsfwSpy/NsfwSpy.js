@@ -1,4 +1,4 @@
-import { ClassificationTypes } from './../../nsfwspy-core/src/index';
+import { ClassificationTypes } from './../../nsfwspy-core';
 import { NsfwSpyResult } from '../../nsfwspy-core';
 import NsfwSpy from '../../nsfwspy-node';
 import * as nsfwjs from 'nsfwjs';
