@@ -21,7 +21,7 @@ NsfwSpy isn't perfect, but the accuracy should be good enough to detect approxim
 | Correctly Predicted Label | 85.0% | 81.0% | 89.8% | 96.4% |
 
 # Quick Start
-This project is available as a [npm package](https://www.npmjs.com/package/nsfwjs) and can be installed with the following commands:
+This project is available as a [npm package](https://www.npmjs.com/package/@nsfwspy/node) and can be installed with the following commands:
 
 ```
 npm install @nsfwspy/node
