@@ -31,12 +31,12 @@ Import NsfwSpy at the top of your JavaScript or TypeScript file:
 
 **JavaScript**
 ```javascript
-const NsfwSpy = require('@nsfwspy/node');
+const { NsfwSpy } = require('@nsfwspy/node');
 ```
 
 **TypeScript**
 ```typescript
-import NsfwSpy from '@nsfwspy/node';
+import { NsfwSpy } from '@nsfwspy/node';
 ```
 
 ### Classify an Image File

@@ -1,6 +1,4 @@
-import { ClassificationTypes } from './../../nsfwspy-core';
-import { NsfwSpyResult } from '../../nsfwspy-core';
-import NsfwSpy from '../../nsfwspy-node';
+import { NsfwSpy, ClassificationTypes, NsfwSpyResult } from '../../nsfwspy-node';
 import * as nsfwjs from 'nsfwjs';
 import * as tf from '@tensorflow/tfjs-node';
 import * as readline from 'readline';
