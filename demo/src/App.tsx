@@ -8,7 +8,7 @@ import './App.scss';
 import { sortNsfwResult } from './functions/sortBy';
 import { NsfwSpy, NsfwSpyResult } from '@nsfwspy/browser'
 
-const nsfwSpy = new NsfwSpy("/model/model.json");
+const nsfwSpy = new NsfwSpy("./model/model.json");
 
 export const App: React.FC = () => {
     const [image, setImage] = useState<ImageFile>();
