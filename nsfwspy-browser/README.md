@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/NsfwSpy/NsfwSpy/main/_art/NsfwSpy-Logo.jpg" alt="NsfwSpy Logo" width="400"/>
+<img src="https://raw.githubusercontent.com/NsfwSpy/NsfwSpy.NET/main/_art/NsfwSpy-Logo.jpg" alt="NsfwSpy Logo" width="400"/>
 
 # Introduction
 NsfwSpy.js is a nudity/pornography image classifier built for Node.js, based on our [parent .NET project](https://github.com/NsfwSpy/NsfwSpy), to aid in moderating user-generated content for various different application types, written in TypeScript. The machine learning model has been trained against the MobileNetV2 neural net architecture with 537,000 images (186GB), from 4 different categories:
@@ -10,7 +10,7 @@ NsfwSpy.js is a nudity/pornography image classifier built for Node.js, based on 
 | Hentai      | Drawings or animations of sexual acts and nudity. | 83,000 |
 | Neutral     | Images that are not sexual in nature. | 268,000 |
 
-<img src="https://raw.githubusercontent.com/NsfwSpy/NsfwSpy/main/_art/Examples.gif" />
+<img src="https://raw.githubusercontent.com/NsfwSpy/NsfwSpy.NET/main/_art/Examples.gif" />
 
 # Performance
 NsfwSpy isn't perfect, but the accuracy should be good enough to detect approximately 96% of Nsfw images, those being images that are classed as pornography, sexy or hentai.
