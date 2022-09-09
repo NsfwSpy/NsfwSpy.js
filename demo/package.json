@@ -2,7 +2,7 @@
   "name": "demo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://d00ML0rDz.github.io/NsfwSpy.js",
+  "homepage": "https://NsfwSpy.github.io/NsfwSpy.js",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",

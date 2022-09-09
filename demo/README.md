@@ -1,6 +1,6 @@
 # NsfwSpy.js Demo
 
-The NsfwSpy.js demo is a small web application which makes it easy to quickly classify images and see if NsfwSpy.js is up to scratch. You can try it for yourself [here](https://d00ml0rdz.github.io/NsfwSpy.js/).
+The NsfwSpy.js demo is a small web application which makes it easy to quickly classify images and see if NsfwSpy.js is up to scratch. You can try it for yourself [here](https://nsfwspy.github.io/NsfwSpy.js).
 
 ## Getting Started
 
@@ -11,7 +11,7 @@ node -v
 
 1. Clone this git repository to your computer using the following command:
 ```
-git clone https://github.com/d00ML0rDz/NsfwSpy.js.git
+git clone https://github.com/NsfwSpy/NsfwSpy.js.git
 ```
 
 2. Move into the demo directory with

@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/d00ML0rDz/NsfwSpy.js.git"
+    "url": "git+https://github.com/NsfwSpy/NsfwSpy.js.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/d00ML0rDz/NsfwSpy.js/issues"
+    "url": "https://github.com/NsfwSpy/NsfwSpy.js/issues"
   },
-  "homepage": "https://github.com/d00ML0rDz/NsfwSpy.js",
+  "homepage": "https://github.com/NsfwSpy/NsfwSpy.js",
   "keywords": [ "nsfw", "pornography", "porn", "inappropriate", "nude", "classifier", "recognition", "classification" ],
   "devDependencies": {
     "@types/node": "^18.7.14",
