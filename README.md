@@ -1,7 +1,7 @@
-<img src="https://raw.githubusercontent.com/d00ML0rDz/NsfwSpy/main/_art/NsfwSpy-Logo.jpg" alt="NsfwSpy Logo" width="400"/>
+<img src="https://raw.githubusercontent.com/NsfwSpy/NsfwSpy/main/_art/NsfwSpy-Logo.jpg" alt="NsfwSpy Logo" width="400"/>
 
 # Introduction
-NsfwSpy.js is a nudity/pornography image classifier built for Node.js and browsers, based on our [parent .NET project](https://github.com/d00ML0rDz/NsfwSpy), to aid in moderating user-generated content for various different application types, written in TypeScript. The machine learning model has been trained against the MobileNetV2 neural net architecture with 537,000 images (186GB), from 4 different categories:
+NsfwSpy.js is a nudity/pornography image classifier built for Node.js and browsers, based on our [parent .NET project](https://github.com/NsfwSpy/NsfwSpy), to aid in moderating user-generated content for various different application types, written in TypeScript. The machine learning model has been trained against the MobileNetV2 neural net architecture with 537,000 images (186GB), from 4 different categories:
 
 | Label       | Description | Files |
 | ----------- | ----------- | ----- |
@@ -10,7 +10,7 @@ NsfwSpy.js is a nudity/pornography image classifier built for Node.js and browse
 | Hentai      | Drawings or animations of sexual acts and nudity. | 83,000 |
 | Neutral     | Images that are not sexual in nature. | 268,000 |
 
-<img src="https://raw.githubusercontent.com/d00ML0rDz/NsfwSpy/main/_art/Examples.gif" />
+<img src="https://raw.githubusercontent.com/NsfwSpy/NsfwSpy/main/_art/Examples.gif" />
 
 # Performance
 NsfwSpy.js isn't perfect, but the accuracy should be good enough to detect approximately 96% of Nsfw images, those being images that are classed as pornography, sexy or hentai.
@@ -21,7 +21,7 @@ NsfwSpy.js isn't perfect, but the accuracy should be good enough to detect appro
 | Correctly Predicted Label | 85.0% | 81.0% | 89.8% | 96.4% |
 
 # Quick Start
-Want to see how NsfwSpy.js performs? Try it now on our [test site](https://d00ml0rdz.github.io/NsfwSpy.js/).
+Want to see how NsfwSpy.js performs? Try it now on our [test site](https://nsfwspy.github.io/NsfwSpy.js).
 
 This project is available as two seperate packages, one for [browsers](https://www.npmjs.com/package/@nsfwspy/browser) and one for [Node.js](https://www.npmjs.com/package/@nsfwspy/node).
 
@@ -85,4 +85,4 @@ Interested to get involved in the project? Whether you fancy adding features, pr
 # Notes
 Using NsfwSpy? Let us know! We're keen to hear how the technology is being used and improving the safety of applications.
 
-Got a feature request or found something not quite right? Report it [here](https://github.com/d00ML0rDz/NsfwSpy.js/issues) on GitHub and we'll try to help as best as possible.
+Got a feature request or found something not quite right? Report it [here](https://github.com/NsfwSpy/NsfwSpy.js/issues) on GitHub and we'll try to help as best as possible.
