@@ -4,7 +4,7 @@ The NsfwSpy.js demo is a small web application which makes it easy to quickly cl
 
 ## Getting Started
 
-To run the demo locally, follow the following steps. Be sure you have [Node.js](https://nodejs.org/) installed already by running the following command in the terminal.
+To run the demo locally, follow the steps below. Be sure you have [Node.js](https://nodejs.org/) installed already by running the following command in the terminal.
 ```
 node -v
 ```
