@@ -2,7 +2,7 @@
 
 The NsfwSpy.js demo is a small web application which makes it easy to quickly classify images and see if NsfwSpy.js is up to scratch. You can try it for yourself [here](https://d00ml0rdz.github.io/NsfwSpy.js/).
 
-<img src="https://raw.githubusercontent.com/d00ML0rDz/NsfwSpy/main/_art/NsfwSpy.App.gif" alt="NsfwSpy.js demo" width="400" />
+<img src="https://raw.githubusercontent.com/d00ML0rDz/NsfwSpy/main/_art/NsfwSpy.App.gif" alt="NsfwSpy.js demo" width="300" />
 
 ## Getting Started
 
