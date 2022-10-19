@@ -29,7 +29,7 @@ This project is available as two seperate packages, one for [browsers](https://w
 
 ### Script Tag
 Include this in your HTML page:
-```
+```html
 <script src="https://unpkg.com/@nsfwspy/browser@1.0.4/dist/nsfwspy-browser.min.js"></script>
 ```
 
