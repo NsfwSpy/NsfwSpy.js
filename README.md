@@ -27,6 +27,13 @@ This project is available as two seperate packages, one for [browsers](https://w
 
 ## Browser
 
+### Script Tag
+Include this in your HTML page:
+```
+<script src="https://unpkg.com/@nsfwspy/browser@1.0.4/dist/nsfwspy-browser.min.js"></script>
+```
+
+### Use NPM
 ```
 npm install @nsfwspy/browser
 ```
