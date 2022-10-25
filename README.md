@@ -86,6 +86,29 @@ await nsfwSpy.load();
 const result = await nsfwSpy.classifyImageFromByteArray(imageBuffer);
 ```
 
+# Comparison to Other Libraries
+
+## NSFWJS
+[NSFWJS](https://github.com/infinitered/nsfwjs) is the most popular JS pornographic image classifier. It works differently to NsfwSpy in that Sexy images include women with exposed breasts as well as people in their underwear. NsfwSpy classifies any nudity as pornography.
+
+## Private Detector
+[Private Detector](https://github.com/bumble-tech/private-detector) is the python image classifier from the team at Bumble. This classifier has been specifically designed for nude images and not Hentai or Sexy images.
+
+### Is Nsfw (Calculated as Porngraphy + Sexy + Hentai >= 0.5)
+|     | Pornography | Sexy | Hentai | Neutral |
+| --- | --- | --- | --- | --- |
+| NsfwSpy.js | 94.3% | 96.3% | 94.6% | 3.4% | 
+| NSFWJS | 93.7% | 92.2% | 90.5% | 7.3% |
+
+### Correctly Predicted Label
+|     | Pornography | Sexy | Hentai | Neutral |
+| --- | --- | --- | --- | --- |
+| NsfwSpy.js | 83.1% | 82.2% | 90.7% | 97.2% | 
+| NSFWJS | 92.6%* | 69.0% | 88.2% | 92.7%* |
+| Private Detector | 76.2% | - | - | 99.2% |
+
+*NSFWJS's Pornography numbers are the sum of Pornography + Sexy and Neutral numbers are the sum of Neutral + Drawing.
+
 # Contact Us
 Interested to get involved in the project? Whether you fancy adding features, providing images to train NsfwSpy with or something else, feel free to contact us via email at [nsfwspy@outlook.com](mailto:nsfwspy@outlook.com) or find us on Twitter at [@nsfw_spy](https://twitter.com/nsfw_spy).
 
