@@ -94,6 +94,8 @@ const result = await nsfwSpy.classifyImageFromByteArray(imageBuffer);
 ## Private Detector
 [Private Detector](https://github.com/bumble-tech/private-detector) is the python image classifier from the team at Bumble. This classifier has been specifically designed for nude images and not Hentai or Sexy images.
 
+## Results
+
 ### Is Nsfw (Calculated as Porngraphy + Sexy + Hentai >= 0.5)
 |     | Pornography | Sexy | Hentai | Neutral |
 | --- | --- | --- | --- | --- |
