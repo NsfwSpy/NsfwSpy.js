@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/NsfwSpy/NsfwSpy.NET/main/_art/NsfwSpy-Logo.jpg" alt="NsfwSpy Logo" width="400"/>
+<img src="https://raw.githubusercontent.com/NsfwSpy/NsfwSpy.NET/main/_art/NsfwSpy.jpg" alt="NsfwSpy Logo" width="400"/>
 
 # Introduction
 NsfwSpy.js is a nudity/pornography image classifier built for Node.js and browsers, based on our [parent .NET project](https://github.com/NsfwSpy/NsfwSpy), to aid in moderating user-generated content for various different application types, written in TypeScript. The machine learning model has been trained against the MobileNetV2 neural net architecture with 537,000 images (186GB), from 4 different categories:
