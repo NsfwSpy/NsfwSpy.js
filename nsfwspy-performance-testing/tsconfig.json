@@ -20,7 +20,6 @@
         "**/__tests__/*"
     ],
     "references": [
-        { "path": "../nsfwspy-core" },
         { "path": "../nsfwspy-node" }
     ]
 }
