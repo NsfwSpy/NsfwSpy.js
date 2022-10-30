@@ -27,7 +27,7 @@ export class NsfwSpy {
                 .toFloat()
                 .div(tf.scalar(255)) as tf.Tensor3D;
 
-            const resizedImage = tf.image.resizeBilinear(decodedImage, [224, 224], true);
+            const resizedImage = tf.image.resizeBilinear(decodedImage, [this.imageSize, this.imageSize], true);
             const image = resizedImage.reshape([1, this.imageSize, this.imageSize, 3]);
 
             return this.model.execute(
