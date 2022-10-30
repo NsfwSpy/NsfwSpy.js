@@ -43,7 +43,7 @@ const nsfwSpy = new NsfwSpy("file://./model/model.json");
 ### Script Tag
 Include this in your HTML page:
 ```html
-<script src="https://unpkg.com/@nsfwspy/browser@1.0.4/dist/nsfwspy-browser.min.js"></script>
+<script src="https://unpkg.com/@nsfwspy/browser@1.0.8/dist/nsfwspy-browser.min.js"></script>
 ```
 
 ### Use NPM
