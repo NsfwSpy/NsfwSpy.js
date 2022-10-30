@@ -1,6 +1,6 @@
 {
   "name": "@nsfwspy/node",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A nudity/pornography image classifier built for Node.js.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

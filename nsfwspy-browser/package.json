@@ -1,6 +1,6 @@
 {
   "name": "@nsfwspy/browser",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "description": "A nudity/pornography image classifier built for web browsers.",
   "main": "dist/index.js",
   "unpkg": "dist/nsfwspy-browser.min.js",
