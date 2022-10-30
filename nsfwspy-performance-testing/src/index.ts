@@ -15,7 +15,7 @@ const runPerformanceTesting = async (classifier: "nsfwspy" | "nsfwjs") => {
     ];
 
     const results: PerformanceResult[] = [];
-    let nsfwSpy = new NsfwSpy();
+    let nsfwSpy = new NsfwSpy("file://../models/mobilenet-v1.0.0/model.json");
     let nsfwJs: nsfwjs.NSFWJS;
     if (classifier === "nsfwspy") {
         await nsfwSpy.load({
