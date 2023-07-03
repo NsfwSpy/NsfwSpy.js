@@ -75,6 +75,3 @@ export class NsfwSpyResult {
 }
 
 export type ClassificationTypes = "hentai" | "neutral" | "pornography" | "sexy";
-
-global.NsfwSpy = NsfwSpy;
-global.NsfwSpyResult = NsfwSpyResult;

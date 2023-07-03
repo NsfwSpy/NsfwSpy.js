@@ -42,7 +42,7 @@ import { NsfwSpy } from '@nsfwspy/node';
 ```
 
 ### Load the Model
-Before starting to use NsfwSpy, the [model](https://github.com/NsfwSpy/NsfwSpy.js/tree/main/models/mobilenet-v1.0.0) should be loaded, ideally from your hosted site or as local files on your system. NsfwSpy by default uses a publically hosted model in an S3 bucket, but we cannot ensure this will be available forever and should not be used in production systems.
+Before starting to use NsfwSpy, the [model](https://github.com/NsfwSpy/NsfwSpy.js/tree/main/models/mobilenet-v1.0.0) should be loaded from your hosted site or as local files on your system.
 
 **Hosted files**
 ```typescript
@@ -65,7 +65,7 @@ const result = await nsfwSpy.classifyImageFile(filePath);
 ### Classify an Image from a Byte Array
 ```javascript
 const imageBuffer = await fs.readFileSync(filePath);
-const nsfwSpy = new NsfwSpy();
+const nsfwSpy = new NsfwSpy("file://./model/model.json");
 await nsfwSpy.load();
 const result = await nsfwSpy.classifyImageFromByteArray(imageBuffer);
 ```
