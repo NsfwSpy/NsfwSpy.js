@@ -26,9 +26,9 @@ Want to see how NsfwSpy.js performs? Try it now on our [test site](https://nsfws
 This project is available as two seperate packages, one for [browsers](https://www.npmjs.com/package/@nsfwspy/browser) and one for [Node.js](https://www.npmjs.com/package/@nsfwspy/node).
 
 ## Load the Model
-Before starting to use NsfwSpy, the [model](https://github.com/NsfwSpy/NsfwSpy.js/tree/main/models/mobilenet-v1.0.0) should be loaded, ideally from your hosted site or as local files on your system. NsfwSpy by default uses a publically hosted model in an S3 bucket, but we cannot ensure this will be available forever and should not be used in production systems.
+Before starting to use NsfwSpy, the [model](https://github.com/NsfwSpy/NsfwSpy.js/tree/main/models/mobilenet-v1.0.0) should be loaded from your hosted site or as local files on your system.
 
-**Hosted files**
+**Hosted files for Browsers**
 ```typescript
 const nsfwSpy = new NsfwSpy("./model/model.json");
 ```
@@ -43,7 +43,7 @@ const nsfwSpy = new NsfwSpy("file://./model/model.json");
 ### Script Tag
 Include this in your HTML page:
 ```html
-<script src="https://unpkg.com/@nsfwspy/browser@1.0.8/dist/nsfwspy-browser.min.js"></script>
+<script src="https://unpkg.com/@nsfwspy/browser@1.1.0/dist/nsfwspy-browser.min.js"></script>
 ```
 
 ### Use NPM
