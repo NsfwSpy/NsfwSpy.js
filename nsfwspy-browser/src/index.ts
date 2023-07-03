@@ -7,9 +7,9 @@ export class NsfwSpy {
     private modelPath: string;
     private model: tf.GraphModel | null;
 
-    constructor(modelPath?: string) {
+    constructor(modelPath: string) {
         this.imageSize = 224;
-        this.modelPath = modelPath ?? "https://nsfwspy.s3.eu-west-2.amazonaws.com/models/mobilenet-v1.0.0/model.json";
+        this.modelPath = modelPath;
         this.model = null;
     }
 
