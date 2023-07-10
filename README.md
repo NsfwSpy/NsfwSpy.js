@@ -60,7 +60,7 @@ import { NsfwSpy } from '@nsfwspy/browser';
 ### Classify an Image element
 ```javascript
 const img = document.getElementById("img");
-const nsfwSpy = new NsfwSpy();
+const nsfwSpy = new NsfwSpy("./model/model.json");
 await nsfwSpy.load();
 const result = await nsfwSpy.classifyImage(img);
 ```
@@ -86,7 +86,7 @@ import { NsfwSpy } from '@nsfwspy/node';
 ### Classify an Image File
 ```javascript
 const filePath = "C:\\Users\\username\\Documents\\flower.jpg";
-const nsfwSpy = new NsfwSpy();
+const nsfwSpy = new NsfwSpy("file://./model/model.json");
 await nsfwSpy.load();
 const result = await nsfwSpy.classifyImageFile(filePath);
 ```
@@ -94,7 +94,7 @@ const result = await nsfwSpy.classifyImageFile(filePath);
 ### Classify an Image from a Byte Array
 ```javascript
 const imageBuffer = await fs.readFileSync(filePath);
-const nsfwSpy = new NsfwSpy();
+const nsfwSpy = new NsfwSpy("file://./model/model.json");
 await nsfwSpy.load();
 const result = await nsfwSpy.classifyImageFromByteArray(imageBuffer);
 ```
